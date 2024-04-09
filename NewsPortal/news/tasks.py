@@ -18,7 +18,7 @@ def send_weekly_newsletter():
         ).distinct()
 
         if posts:
-            subject = f'Новости за неделю в категории {subscriber.category.name}!'
+            subject = f'Публикации за неделю в категории {subscriber.category.name}!'
             html_content = render_to_string(
                 'news/weekly_newsletter.html',
                 {'posts': posts, 'category': subscriber.category}
